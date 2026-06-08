@@ -23,6 +23,7 @@ methods:
 class Main
 {
 methods:
+   int istPrim(int x);
    int main();
 
 };

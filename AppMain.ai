@@ -2,15 +2,30 @@ Import
 {
   "Strings.ad",
   "System.ad",
+  "Math.ad",
   "AppMain.ad"
+}
+
+int Main::istPrim(int x)
+{
+   var int wurzel;
+   var Math m;
+   wurzel = cast(int,m.wurzel(x));
+
+   for( var int i=2; i <= wurzel; i++)
+   {
+      var int rest = x % i;
+      if(rest == 0) { return 0; }
+   }
+   return 1;
 }
 
 int Main::main()
 { 
    var PrintfClass pfc;
 
+   ///////////////////////////////////////////////////////////////////////////////////////
    pfc.fstr("ZehnerUebergaenge:").pr();
-   
    for(var int i=2; i <= 9; i++)
    {
       var int r;
@@ -32,6 +47,7 @@ int Main::main()
       while( summe < 10);
    }
    
+   ///////////////////////////////////////////////////////////////////////////////////////
    pfc.fstr("Das kleine Einmaleins der Multiplikation:").pr();
    for(var int i=0; i <= 20;i++)
    {
@@ -42,6 +58,21 @@ int Main::main()
       }
    }
 
+   ///////////////////////////////////////////////////////////////////////////////////////
+   pfc.fstr("Erste 1000 Primzahlen:").pr();
+   var int primAnzahl = 0;
+   var Main am;
+   var int i=3;
+   do
+   {
+      if(am.istPrim(i) == 1)
+      {
+         pfc.fstr("$").sa(i).pr();
+         primAnzahl++;
+      }
+      i++;
+   }
+   while(primAnzahl < 100);
    return 1;
 }
 
