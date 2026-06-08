@@ -1,0 +1,47 @@
+Import
+{
+  "Strings.ad",
+  "System.ad",
+  "AppMain.ad"
+}
+
+int Main::main()
+{ 
+   var PrintfClass pfc;
+
+   //ZehnerUebergaenge
+   /*
+   for(var int i=2; i <= 9; i++)
+   {
+      var int r;
+      var int summe;
+      do {
+         inline_cpp[[
+           r = rand();
+         ]]      
+         if (r < 0) { r = r * -1; }
+         r = r % 10;
+         summe = i + r;
+         if(summe > 10)
+         { 
+            var int rest = summe - 10;
+            var int bis10 = 10 - i;
+            pfc.fstr("$+$=$+$+$=$").sa(i).sa(r).sa(i).sa(bis10).sa(rest).sa(summe).pr();
+         }
+      }
+      while( summe < 10);
+   }
+   */
+
+   for(var int i=0; i <= 20;i++)
+   {
+      for(var int j=0; j <= 20;j++)
+      {
+        var int produkt = i*j;
+        pfc.fstr("$*$=$").sa(i).sa(j).sa(produkt).pr();
+      }
+   }
+
+   return 1;
+}
+
