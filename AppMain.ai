@@ -9,15 +9,15 @@ int Main::main()
 { 
    var PrintfClass pfc;
 
-   //ZehnerUebergaenge
-   /*
+   pfc.fstr("ZehnerUebergaenge:").pr();
+   
    for(var int i=2; i <= 9; i++)
    {
       var int r;
       var int summe;
       do {
          inline_cpp[[
-           r = rand();
+           r = ::rand();
          ]]      
          if (r < 0) { r = r * -1; }
          r = r % 10;
@@ -31,8 +31,8 @@ int Main::main()
       }
       while( summe < 10);
    }
-   */
-
+   
+   pfc.fstr("Das kleine Einmaleins der Multiplikation:").pr();
    for(var int i=0; i <= 20;i++)
    {
       for(var int j=0; j <= 20;j++)

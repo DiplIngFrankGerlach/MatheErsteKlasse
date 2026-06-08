@@ -70,7 +70,7 @@ MISC_OPT=-DSPR_USE_PTHREAD_MUTEX_LOCKS=1 -DLINUX_SAPPEUR=1 -DSPR_DEBUG=1 -DSPR_P
 
 
 all:$(OBJECTS)
-	$(CC) $(OPT) $(MISC_OPT) -o helloworld $^ $(LDLIBS)
+	$(CC) $(OPT) $(MISC_OPT) -o ErsteKlasse $^ $(LDLIBS)
 	
 clean:
-	rm *.o gauss2 
+	rm *.o ErsteKlasse
