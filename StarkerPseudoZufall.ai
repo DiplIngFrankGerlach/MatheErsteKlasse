@@ -1,0 +1,45 @@
+Import
+{
+ "Strings.ad",
+ "System.ad",
+ "MiniFeistel.ad", 
+ "StarkerPseudoZufall.ad"
+}
+
+StarkerPseudoZufall::StarkerPseudoZufall()
+{
+   var String_16 schluessel("VonDerVogelWeide_Kepler_Gauss_Leibniz");
+   mf = new MiniFeistel(schluessel,8);
+   
+   zustandLinks = 1;
+   zustandRechts = 1;
+
+   oktetsVorhanden = 0;
+}
+
+int StarkerPseudoZufall::naechster()
+{
+   var int ret = 0;
+   for(var int i=0; i < 4; i++)
+   {
+      if(oktetsVorhanden == 0)
+      {
+         mf.encipher(zustandLinks,zustandRechts);
+         oktetsVorhanden = 16;
+      }
+      if(oktetsVorhanden > 8)
+      {
+        var int schub = (oktetsVorhanden - 8 - 1)*8;
+        var longlong oktet = (zustandLinks >> schub) & 0xff;
+        ret = ret ^ cast(int,oktet);
+      } 
+      else
+      {
+        var int schub = (oktetsVorhanden  - 1)*8;
+        var longlong oktet = (zustandRechts >> schub) & 0xff;
+        ret = ret ^ cast(int,oktet);
+      }
+   } 
+   return ret;
+}
+
