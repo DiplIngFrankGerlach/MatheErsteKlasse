@@ -20,25 +20,30 @@ StarkerPseudoZufall::StarkerPseudoZufall()
 int StarkerPseudoZufall::naechster()
 {
    var int ret = 0;
+   var PrintfClass pfc;
    for(var int i=0; i < 4; i++)
    {
       if(oktetsVorhanden == 0)
       {
          mf.encipher(zustandLinks,zustandRechts);
          oktetsVorhanden = 16;
+         pfc.fstr("MF: $ $").saHex(zustandLinks).saHex(zustandRechts).pr();
       }
       if(oktetsVorhanden > 8)
       {
         var int schub = (oktetsVorhanden - 8 - 1)*8;
         var longlong oktet = (zustandLinks >> schub) & 0xff;
         ret = ret ^ cast(int,oktet);
+        if(i < 3) { ret = ret << 8; }
       } 
       else
       {
         var int schub = (oktetsVorhanden  - 1)*8;
         var longlong oktet = (zustandRechts >> schub) & 0xff;
         ret = ret ^ cast(int,oktet);
+        if(i < 3) { ret = ret << 8; }
       }
+      oktetsVorhanden = oktetsVorhanden - 1;
    } 
    return ret;
 }

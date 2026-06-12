@@ -3,6 +3,8 @@ Import
   "Strings.ad",
   "System.ad",
   "Math.ad",
+  "MiniFeistel.ad",
+  "StarkerPseudoZufall.ad",
   "AppMain.ad"
 }
 
@@ -62,7 +64,7 @@ int Main::main()
    pfc.fstr("Erste 100 Primzahlen:").pr();
    var int primAnzahl = 1;
    
-   pfc.fstr("2).pr();
+   pfc.fstr("2").pr();
 
    var Main am;
    var int i=3;
@@ -76,6 +78,16 @@ int Main::main()
       i++;
    }
    while(primAnzahl < 100);
+
+   ///////////////////////////////////////////////////////////////////////////////////////
+   pfc.fstr("Starker Zufall:").pr();
+   var StarkerPseudoZufall spz;
+
+   for(i=0;i < 48; i++)
+   {
+       pfc.fstr("$").saHex(spz.naechster()).pr();
+   }
+   
    return 1;
 }
 
