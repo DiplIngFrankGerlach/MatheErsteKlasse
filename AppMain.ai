@@ -83,9 +83,13 @@ int Main::main()
    pfc.fstr("Starker Zufall:").pr();
    var StarkerPseudoZufall spz;
 
-   for(i=0;i < 48; i++)
+   spz.initFromDevURandom();
+
+   for(i=0;i < 10000000; i++)
    {
-       pfc.fstr("$").saHex(spz.naechster()).pr();
+       var int z = spz.naechster();
+       if( z < 0) { z = z * -1;}
+       pfc.fstr("Z $").saHex(z % 1000).pr();
    }
    
    return 1;
