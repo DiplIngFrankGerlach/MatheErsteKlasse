@@ -55,6 +55,10 @@ compile ZKNuetzlich.ai
 
 compile Math.ai
 
+compile StarkerPseudoZufall.ai
+
+compile MiniFeistel.ai
+
 
 
 

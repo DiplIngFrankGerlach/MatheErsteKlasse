@@ -60,7 +60,10 @@ int Main::main()
 
    ///////////////////////////////////////////////////////////////////////////////////////
    pfc.fstr("Erste 100 Primzahlen:").pr();
-   var int primAnzahl = 0;
+   var int primAnzahl = 1;
+   
+   pfc.fstr("2).pr();
+
    var Main am;
    var int i=3;
    do

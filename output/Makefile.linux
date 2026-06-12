@@ -12,10 +12,13 @@ AppMain.o \
 determineStackMemoryNeeds.o \
 determStackMemory_AppMain.ai.o \
 determStackMemory_Math.ai.o \
+determStackMemory_MiniFeistel.ai.o \
+determStackMemory_StarkerPseudoZufall.ai.o \
 determStackMemory_Strings.ai.o \
 determStackMemory_System.ai.o \
 determStackMemory_ZKNuetzlich.ai.o \
 Math.o \
+MiniFeistel.o \
 placementNewClass_AlphabeticSorter.o \
 placementNewClass_AlphaEntry.o \
 placementNewClass_Assigner_String_128.o \
@@ -33,6 +36,7 @@ placementNewClass_Input.o \
 placementNewClass_KeyType4.o \
 placementNewClass_Main.o \
 placementNewClass_Math.o \
+placementNewClass_MiniFeistel.o \
 placementNewClass_MTSuperClass.o \
 placementNewClass_MultiThreadAdmin.o \
 placementNewClass_Mutex.o \
@@ -43,6 +47,7 @@ placementNewClass_PrintfClass.o \
 placementNewClass_Semaphore.o \
 placementNewClass_SemaphoreInfo.o \
 placementNewClass_SPRFile.o \
+placementNewClass_StarkerPseudoZufall.o \
 placementNewClass_String_128.o \
 placementNewClass_String_16.o \
 placementNewClass_SystemConstants.o \
@@ -54,9 +59,10 @@ placementNewClass_ThreadLocalStorageEntry.o \
 placementNewClass_ThreadLocalStorageList.o \
 placementNewClass_Umgebung.o \
 placementNewClass_ZKNuetzlich.o \
+StarkerPseudoZufall.o \
 Strings.o \
 System.o \
-ZKNuetzlich.o 
+ZKNuetzlich.o \
 
 CC = gcc
 HOMEDIR=/Users/fg
