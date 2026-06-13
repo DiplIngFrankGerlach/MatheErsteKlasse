@@ -80,17 +80,40 @@ int Main::main()
    while(primAnzahl < 100);
 
    ///////////////////////////////////////////////////////////////////////////////////////
-   pfc.fstr("Starker Zufall:").pr();
+   pfc.fstr("Zufaellige Aufgaben:").pr();
    var StarkerPseudoZufall spz;
 
    spz.initFromDevURandom();
 
-   for(i=0;i < 10000000; i++)
+   var String_16 sprPuffer;
+   var int ende = 0;
+   do
    {
-       var int z = spz.naechster();
-       if( z < 0) { z = z * -1;}
-       pfc.fstr("Z $").saHex(z % 1000).pr();
-   }
+     var int a = (spz.naechster() & 0xFFFFFF) % 10;
+     var int b = (spz.naechster() & 0xFFFFFF) % 10;
+     var int summe = a + b;
+     pfc.fstr("$+$=?").sa(a).sa(b).pr();
+
+     pfc.fstr("Druecke E zum Beenden, sonst die Loesung").pr();
+     sprPuffer.clear();
+     var Input input;
+     input.getString(sprPuffer);  
+     if(sprPuffer.equals("E") == 1) {ende = 1; }
+     else
+     {
+        if(sprPuffer.asNumber() == summe )
+        {
+          pfc.fstr("Richtig").pr();
+        }
+        else
+        {
+          pfc.fstr("Falsch").pr();
+        }
+     }
+     
+   } 
+   while(ende == 0);
+
    
    return 1;
 }
