@@ -22,4 +22,6 @@ methods:
 
    void Zehneruebergaenge();
 
+   void DivisionsTest();
+
 };
