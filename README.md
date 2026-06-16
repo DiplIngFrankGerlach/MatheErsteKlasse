@@ -1,5 +1,7 @@
-# Erste Klasse Mathematik in SAPPEUR
+# Erste Klasse(und mehr) Mathematik in SAPPEUR
 
 ## Autor: Dipl. Ing. Frank Gerlach, Brackenheim (frank.gerlach@di-fg.de)
 
-Kleines Einmaleins von 0 bis 20 in Sappeur berechnet.
+Mathematik-Übungsprogramm für die Grundschule. Addition, Multiplikation,
+Primzahlen.
+
